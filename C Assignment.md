@@ -1051,5 +1051,27 @@ Enter first number: 72
 Enter second number: 16
 72 = 16 x 4 + 8 
 16 = 8 x 2 + 0 
-gcd(72,16) = 8 
+gcd(72,16) = 8
 ```
+
+50. Input a string and reverse it.
+
+```c
+#include<stdio.h>
+#include<string.h>
+int main() {
+    char n[100];
+    printf("Enter the string : ");
+    scanf("%99[^\n]", n);
+    int i = strlen(n) - 1;
+    while(i >= 0) {
+        printf("%c",n[i]);
+        i = i -1;
+    }
+}
+```
+```
+Enter the string : Avada Kedavra
+arvadeK adavA
+```
+
