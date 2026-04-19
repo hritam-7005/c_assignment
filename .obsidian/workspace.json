@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "576ab4f873c5e37b",
@@ -185,6 +186,17 @@
   },
   "active": "70caa17ea1159e50",
   "lastOpenFiles": [
+    "programs/order",
+    "programs/order.c",
+    "programs/letterz.c",
+    "programs/lettery",
+    "programs/letterx",
+    "programs/lettery.c",
+    "programs/lettern",
+    "programs/lettern.c",
+    "programs/letterx.c",
+    "programs/letters",
+    "programs/letters.c",
     "Untitled.md",
     "C Assignment.md"
   ]
