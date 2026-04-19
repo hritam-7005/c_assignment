@@ -186,6 +186,8 @@
   },
   "active": "70caa17ea1159e50",
   "lastOpenFiles": [
+    "programs/sumnorime",
+    "programs/sumnorime.c",
     "programs/order",
     "programs/order.c",
     "programs/letterz.c",
@@ -195,8 +197,6 @@
     "programs/lettern",
     "programs/lettern.c",
     "programs/letterx.c",
-    "programs/letters",
-    "programs/letters.c",
     "Untitled.md",
     "C Assignment.md"
   ]
