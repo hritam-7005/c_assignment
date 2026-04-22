@@ -186,17 +186,17 @@
   },
   "active": "70caa17ea1159e50",
   "lastOpenFiles": [
+    "programs/stringpalindrome",
+    "programs/stringpalindrome.c",
+    "programs/linearsearch",
+    "programs/linearsearch.c",
+    "programs/biggestofn",
     "programs/biggestofn.c",
     "programs/ninputdisplay",
     "programs/ninputdisplay.c",
     "programs/nonfibonacci",
     "programs/nonfibonacci.c",
     "programs/nprimesum.c",
-    "programs/sumnorime",
-    "programs/sumnorime.c",
-    "programs/order",
-    "programs/order.c",
-    "programs/letterz.c",
     "Untitled.md",
     "C Assignment.md"
   ]

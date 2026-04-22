@@ -1259,11 +1259,75 @@ SUm = 28
 
 38. To find the biggest of n input numbers and find its position
 
+```c
+#include<stdio.h>
+int main() {
+    int n;
+    printf("How many numbers : ");
+    scanf("%d", &n);
+    int arr[n];
+    for (int i = 0; i < n; i++) {
+        printf("Enter number %d: ", i+1);
+        scanf("%d", &arr[i]);
+    }
+    int big = arr[0];
+    int index = 0; int temp;
+    for (int i = 0; i < n; i++) {
+        temp = big;
+        big = (arr[i] >= big)? arr[i] : big;
+        index = (big == temp)? index : i;
+    }
+    printf("The largest number is: %d at position: %d", big, index+1);
+}
+```
+```
+How many numbers : 5
+Enter number 1: 2
+Enter number 2: 5
+Enter number 3: 3
+Enter number 4: 8
+Enter number 5: 6
+The largest number is: 8 at position: 4
 ```
 
+39. To input a list of numbers and search a particular number is present or not
+
+```c
+#include<stdio.h>
+int main() {
+    int n;
+    printf("How many numbers : ");
+    scanf("%d", &n);
+    int arr[n]; int num;
+    int index = 0; int check;
+    for (int i = 0; i < n; i++) {
+        printf("Enter number %d: ", i+1);
+        scanf("%d", &arr[i]);
+    }
+    printf("Who do you want to search: ");
+    scanf("%d", &num);
+    check = 0;
+    for (int i = 0; i < n; i++) {
+        if (arr[i] == num) {check = 1; printf("Found %d at position %d.\n", num, i+1); break;}
+        else {check = 0;}
+    }
+    if (check == 0) printf("%d not found.",num);
+}
+```
+```
+How many numbers : 5
+Enter number 1: 1
+Enter number 2: 5
+Enter number 3: 3
+Enter number 4: 2
+Enter number 5: 7
+Who do you want to search: 2
+Found 2 at position 4.
 ```
 
-39. Find the factorial of a number using function
+40. Do the previous problem using binary search.
+
+41. Find the factorial of a number using function
 
 ```c
 #include <stdio.h>
@@ -1286,6 +1350,8 @@ int fact(n) {
 Number? : 5
 5! = 120 
 ```
+
+
 
 43. Draw the Pascal Triangle
 
@@ -1334,6 +1400,14 @@ How many lines : 8
 1 8 28 56 70 56 28 8 1 
 ```
 
+44. Find factorial of a number using recursion
+
+45. Sum of n natural numbers using recursion
+
+46. Find a^b using recursion
+
+47. Print Fibonacci series using recursion
+
 48. Input two numbers and find their GCD using recursion.
 
 ```c
@@ -1375,7 +1449,11 @@ Enter second number: 16
 gcd(72,16) = 8
 ```
 
-50. Input a string and reverse it.
+49. Input two strings and concatenate them.
+
+50. Enter a sentence and find number of vowels, consonants, spaces and special characters
+
+51. Input a string and reverse it.
 
 ```c
 #include<stdio.h>
@@ -1396,3 +1474,62 @@ Enter the string : Avada Kedavra
 arvadeK adavA
 ```
 
+52. Check a string palindrome or not.
+
+```c
+#include <stdio.h>
+#include <string.h>
+
+int isPalindrome(char str[]) {
+    int low = 0;
+    int high = strlen(str) - 1;
+
+    while (low < high) {
+        if (str[low] != str[high]) {
+            return 0;
+        }
+        low++;
+        high--;
+    }
+    return 1;
+}
+
+int main() {
+    char word[100];
+    printf("Enter a string: ");
+    scanf("%s", word);
+
+    if (isPalindrome(word)) {
+        printf("%s is a palindrome.\n", word);
+    } else {
+        printf("%s is not a palindrome.\n", word);
+    }
+
+    return 0;
+}
+```
+```
+Enter a string: malayalam
+malayalam is a palindrome.
+```
+
+53. Find reverse of a string.
+
+```c
+#include<stdio.h>
+#include<string.h>
+int main() {
+    char n[100];
+    printf("Enter the string : ");
+    scanf("%99[^\n]", n);
+    int i = strlen(n) - 1;
+    while(i >= 0) {
+        printf("%c",n[i]);
+        i = i -1;
+    }
+}
+```
+```
+Enter the string : helloWorld
+arvadeK dlroWolleh
+```

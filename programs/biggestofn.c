@@ -8,7 +8,12 @@ int main() {
         printf("Enter number %d: ", i+1);
         scanf("%d", &arr[i]);
     }
+    int big = arr[0];
+    int index = 0; int temp;
     for (int i = 0; i < n; i++) {
-        printf("Number_%d= %d; ", i+1 , arr[i]);
+        temp = big;
+        big = (arr[i] >= big)? arr[i] : big;
+        index = (big == temp)? index : i;
     }
+    printf("The largest number is: %d at position: %d", big, index+1);
 }
