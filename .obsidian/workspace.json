@@ -186,6 +186,8 @@
   },
   "active": "70caa17ea1159e50",
   "lastOpenFiles": [
+    "programs/stringcount",
+    "programs/stringcount.c",
     "programs/stringpalindrome",
     "programs/stringpalindrome.c",
     "programs/linearsearch",
@@ -195,8 +197,6 @@
     "programs/ninputdisplay",
     "programs/ninputdisplay.c",
     "programs/nonfibonacci",
-    "programs/nonfibonacci.c",
-    "programs/nprimesum.c",
     "Untitled.md",
     "C Assignment.md"
   ]
