@@ -15,7 +15,7 @@
               "state": {
                 "file": "C Assignment.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
               "title": "C Assignment"
@@ -186,6 +186,7 @@
   },
   "active": "70caa17ea1159e50",
   "lastOpenFiles": [
+    "programs/concatenate.c",
     "programs/stringcount",
     "programs/stringcount.c",
     "programs/stringpalindrome",
@@ -196,7 +197,6 @@
     "programs/biggestofn.c",
     "programs/ninputdisplay",
     "programs/ninputdisplay.c",
-    "programs/nonfibonacci",
     "Untitled.md",
     "C Assignment.md"
   ]

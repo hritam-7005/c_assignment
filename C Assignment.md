@@ -1451,7 +1451,28 @@ gcd(72,16) = 8
 
 49. Input two strings and concatenate them.
 
-50. Enter a sentence and find number of vowels, consonants, spaces and special characters
+50. Input a string and reverse it.
+
+```c
+#include<stdio.h>
+#include<string.h>
+int main() {
+    char n[100];
+    printf("Enter the string : ");
+    scanf("%99[^\n]", n);
+    int i = strlen(n) - 1;
+    while(i >= 0) {
+        printf("%c",n[i]);
+        i = i -1;
+    }
+}
+```
+```
+Enter the string : Avada Kedavra
+arvadeK adavA
+```
+
+51. Enter a sentence and find number of vowels, consonants, spaces and special characters
 
 ```c
 #include <stdio.h>
@@ -1495,27 +1516,6 @@ Vowels: 3
 Consonants: 7
 Spaces: 1
 Special Characters: 0
-```
-
-51. Input a string and reverse it.
-
-```c
-#include<stdio.h>
-#include<string.h>
-int main() {
-    char n[100];
-    printf("Enter the string : ");
-    scanf("%99[^\n]", n);
-    int i = strlen(n) - 1;
-    while(i >= 0) {
-        printf("%c",n[i]);
-        i = i -1;
-    }
-}
-```
-```
-Enter the string : Avada Kedavra
-arvadeK adavA
 ```
 
 52. Check a string palindrome or not.
