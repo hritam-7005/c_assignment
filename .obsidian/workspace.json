@@ -186,17 +186,17 @@
   },
   "active": "70caa17ea1159e50",
   "lastOpenFiles": [
+    "programs/biggestofn.c",
+    "programs/ninputdisplay",
+    "programs/ninputdisplay.c",
+    "programs/nonfibonacci",
+    "programs/nonfibonacci.c",
+    "programs/nprimesum.c",
     "programs/sumnorime",
     "programs/sumnorime.c",
     "programs/order",
     "programs/order.c",
     "programs/letterz.c",
-    "programs/lettery",
-    "programs/letterx",
-    "programs/lettery.c",
-    "programs/lettern",
-    "programs/lettern.c",
-    "programs/letterx.c",
     "Untitled.md",
     "C Assignment.md"
   ]

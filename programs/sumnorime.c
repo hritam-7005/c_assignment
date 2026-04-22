@@ -3,14 +3,12 @@ int pcount = 1;
 int pnum = 2;
 int main() {
     int n;
-    int psum = 0;
+    int psum = 2;
     printf("Enter n: ");
     scanf("%d", &n);
-    int i = 0;
-    while (i <= n) {
+    while (pcount < n) {
         pseries(pcount, pnum);
         psum = psum + pnum;
-        i = i + 1;
     }
     printf("Sum of first %d primes is: %d", n,psum);
     return 0;

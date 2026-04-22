@@ -460,7 +460,7 @@ Number : 3
 	1.  Fibonacci series up to n
 	2.  The nth Fibonacci number
 	3.   First n Fibonacci numbers
-	   
+   
 ```c
 #include<stdio.h>
 int main() {
@@ -983,37 +983,6 @@ Please enter a number: 5
 * * * * * 
 ```
 
-35. Input the values of two variables n and r and calculate nCr
-
-```c
-#include <stdio.h>
-int main() {
-    int n,r;
-    printf("n : ");
-    scanf("%d", &n);
-    printf("r : ");
-    scanf("%d", &r);
-    printf("%dC%d = %d \n", n , r ,choose(n,r));
-    return 0;
-}
-int choose(n,r) {
-    int c = fact(n)/(fact(n-r)*fact(r));
-    return c;
-}
-int fact(n) {
-    int m = 1;
-    for (int i = 2; i < n+1; i++) {
-        m = m * i;
-    }
-    return m;
-}
-```
-```
-n : 5
-r : 2
-5C2 = 10 
-```
-
 30. Print the following order (odd positions- Fibonacci Series and even position- prime
 numbers)
 31. 2 1 3 2 5 3 7 5 11 8 13
@@ -1080,7 +1049,183 @@ Enter n: 10
 2  1  3  2  5  3  7  5  11  8  13  
 ```
 
+32. Find the sum of 1st n prime numbers.
 
+```c
+#include<stdio.h>
+int pcount = 1;
+int pnum = 2;
+int main() {
+    int n;
+    int psum = 2;
+    printf("Enter n: ");
+    scanf("%d", &n);
+    while (pcount < n) {
+        pseries(pcount, pnum);
+        psum = psum + pnum;
+    }
+    printf("Sum of first %d primes is: %d", n,psum);
+    return 0;
+}
+int pseries(i, n) {
+    int j = n+1;
+    if (i == 0) {
+        pcount = pcount + 1;
+        return 2;
+    }else {
+        while (!isprime(j)) {
+            j = j + 1;
+        }
+        pnum = j;
+        pcount = pcount + 1;
+    }
+}
+int isprime(n) {
+    int check = 0;
+    for(int i = 2; i < n; i++){
+        if (n % i == 0) {
+	        check = 0;
+            break;
+        } else if (n % i != 0) {check = 1;}
+    }
+    if (check == 1) {
+        return 1;
+    } else if (check == 0) {return 0;}
+}
+```
+```
+Enter n: 5
+Sum of first 5 primes is: 28
+```
+
+33. Input a number and check if it a Krishnamurthy number
+
+```c
+#include<stdio.h>
+int main() {
+    int n;
+    printf("Enter a number: ");
+    scanf("%d",&n);
+    int m = n;
+    int sum = 0;
+    while (n != 0) {
+        sum = sum + fact(n%10);
+        n = (n - (n%10))/10;
+    }
+    if (sum == m) {
+        printf("%d is a Krishnamurty Number.\n",m);
+    } else {
+        printf("%d is not a Krishnamurty Number.\n",m);
+    }
+    return 0;
+}
+int fact(n) {
+    int m = 1;
+    for (int i = 2; i < n+1; i++) {
+        m = m * i;
+    }
+    return m;
+}
+```
+```
+Enter a number: 145
+145 is a Krishnamurty Number.
+```
+
+34. Print the Non-Fibonacci series
+
+```c
+#include<stdio.h>
+int main() {
+    int a,b,c,n;
+    a = 1;
+    b = 1;
+    printf("Enter required n : ");
+    scanf("%d",&n);
+    printf("Non Fibonacci series upto n : \n");
+    c = a + b;
+    while(c < n+1) {
+        int i = c + 1;
+        a = b;
+        b = c;
+        c = a + b;
+        while(i < c) {
+            printf("%d \n", i);
+            i = i +1;
+        }
+    }
+}
+```
+```
+Enter required n : 10
+Non Fibonacci series upto n : 
+4 
+6 
+7 
+9 
+10 
+11 
+12 
+```
+
+35. Input the values of two variables n and r and calculate nCr.
+
+```c
+#include <stdio.h>
+int main() {
+    int n,r;
+    printf("n : ");
+    scanf("%d", &n);
+    printf("r : ");
+    scanf("%d", &r);
+    printf("%dC%d = %d \n", n , r ,choose(n,r));
+    return 0;
+}
+int choose(n,r) {
+    int c = fact(n)/(fact(n-r)*fact(r));
+    return c;
+}
+int fact(n) {
+    int m = 1;
+    for (int i = 2; i < n+1; i++) {
+        m = m * i;
+    }
+    return m;
+}
+```
+```
+n : 5
+r : 2
+5C2 = 10 
+```
+
+36. To input n numbers from user and display those.
+
+```c
+#include<stdio.h>
+int main() {
+    int n;
+    printf("How many numbers : ");
+    scanf("%d", &n);
+    int arr[n];
+    for (int i = 0; i < n; i++) {
+        printf("Enter number %d: ", i+1);
+        scanf("%d", &arr[i]);
+    }
+    for (int i = 0; i < n; i++) {
+        printf("Number_%d= %d; ", i+1 , arr[i]);
+    }
+}
+```
+```
+How many numbers : 5
+Enter number 1: 2
+Enter number 2: 3
+Enter number 3: 5
+Enter number 4: 7
+Enter number 5: 11
+Number_1= 2; Number_2= 3; Number_3= 5; Number_4= 7; Number_5= 11; 
+```
 
 37. To input n numbers and find their sum
 
@@ -1088,18 +1233,37 @@ Enter n: 10
 #include<stdio.h>
 int main() {
     int n;
-    printf("N = ? :");
+    printf("How many numbers : ");
     scanf("%d", &n);
-    printf("Sum is : %d \n", (n*(n+1))/2);
-    return 0;
+    int sum = 0;
+    int arr[n];
+    for (int i = 0; i < n; i++) {
+        printf("Enter number %d: ", i+1);
+        scanf("%d", &arr[i]);
+    }
+    for (int i = 0; i < n; i++) {
+        sum = sum + arr[i]
+    }
+    printf("SUm = %d",sum);
 }
 ```
 ```
-N = ? :100
-Sum is : 5050 
+How many numbers : 5
+Enter number 1: 2
+Enter number 2: 3
+Enter number 3: 5
+Enter number 4: 7
+Enter number 5: 11
+SUm = 28
 ```
 
-41. Find the factorial of a number using function
+38. To find the biggest of n input numbers and find its position
+
+```
+
+```
+
+39. Find the factorial of a number using function
 
 ```c
 #include <stdio.h>
