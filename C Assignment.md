@@ -1402,11 +1402,96 @@ How many lines : 8
 
 44. Find factorial of a number using recursion
 
+```c
+#include<stdio.h>
+int main() {
+    int n;
+    printf("Enter n: ");
+    scanf("%d",&n);
+    int fact = 1;
+    for ( int i = 1; i < n+1; i++) {
+        fact = fact * i;
+    }
+    printf("%d! = %d", n, fact);
+    return 0;
+}
+```
+```
+Enter n: 6
+6! = 720[
+```
+
 45. Sum of n natural numbers using recursion
+
+```c
+#include<stdio.h>
+int main() {
+    int n;
+    printf("Enter n: ");
+    scanf("%d",&n);
+    int sum = 0;
+    for ( int i = 1; i < n+1; i++) {
+        sum = sum + i;
+    }
+    printf("Sum of first %d numbers = %d", n, sum);
+    return 0;
+}
+```
+```
+Enter n: 5
+Sum of first 5 numbers = 15
+```
 
 46. Find a^b using recursion
 
+```c
+#include<stdio.h>
+int main() {
+    int a,b;
+    printf("Enter a: ");
+    scanf("%d",&a);
+    printf("Enter b: ");
+    scanf("%d",&b);
+    int power = 1;
+    for ( int i = 0; i < b; i++) {
+        power = power*a;
+    }
+    printf("%d ^ %d = %d", a,b, power);
+    return 0;
+}
+```
+```
+Enter a: 5
+Enter b: 5
+5 ^ 5 = 3125
+```
+
 47. Print Fibonacci series using recursion
+
+```c
+#include<stdio.h>
+int main() {
+    int n;
+    printf("Enter n : ");
+    scanf("%d", &n);
+    int arr[n];
+    arr[0] = 1; arr[1] = 1;
+    for ( int i = 2; i <=n ; i++) {
+        arr[i] = arr[i-1] + arr[i-2];
+    }
+    for (int i = 0; i < n; i++) {
+        printf("%d \n", arr[i]);
+    }
+}
+```
+```
+Enter n : 5
+1 
+1 
+2 
+3 
+5 
+```
 
 48. Input two numbers and find their GCD using recursion.
 
@@ -1450,6 +1535,41 @@ gcd(72,16) = 8
 ```
 
 49. Input two strings and concatenate them.
+
+```c
+#include<stdio.h>
+#include<string.h>
+int main() {
+    char str1[100], str2[100];
+    printf("Enter first string :");
+    fgets(str1, sizeof(str1), stdin);
+    printf("Enter second string :");
+    fgets(str2, sizeof(str2), stdin);
+    int n = strlen(str1) + strlen(str2);
+    char str3[n];
+    int count;
+    for (int i=0; str1[i] != '\0'; i++) {
+        count = i;
+        if (str1[i] != '\n' || str1[i] != '\n') {
+            str3[i] = str1[i];
+        }
+    }
+    for (int i=0; str2[i] != '\0'; i++) {
+        if (str2[i] != '\n' || str2[i] != '\n') {
+            str3[i + count] = str2[i];
+        }
+    }
+    for (int i = 0; str3[i] != '\0'; i++) {
+        printf("%c", str3[i]);
+    }
+    return 0;
+}
+```
+```
+Enter first string :String concate
+Enter second string :nation in C programming
+String concatenation in C programming
+```
 
 50. Input a string and reverse it.
 
@@ -1575,5 +1695,5 @@ int main() {
 ```
 ```
 Enter the string : helloWorld
-arvadeK dlroWolleh
+dlroWolleh
 ```
