@@ -186,6 +186,8 @@
   },
   "active": "70caa17ea1159e50",
   "lastOpenFiles": [
+    "programs/binarysearch",
+    "programs/binarysearch.c",
     "programs/concatenate",
     "programs/fibonaccirec",
     "programs/fibonaccirec.c",
@@ -196,8 +198,6 @@
     "programs/sumofnrec.c",
     "programs/factorialrec",
     "programs/factorialrec.c",
-    "programs/concatenate.c",
-    "programs/stringcount",
     "Untitled.md",
     "C Assignment.md"
   ]

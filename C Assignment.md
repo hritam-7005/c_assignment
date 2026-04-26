@@ -275,18 +275,12 @@ Enter the third number : 9
 10.  Input a number and find its absolute value.
 
 ```c
-    #include<stdio.h>
+#include<stdio.h>
 int main() {
     int a;
     printf("ENter a number :");
     scanf("%d", &a);
-    if (a > 0) {
-        printf("|%d| = %d", a,a);
-    } else if (a < 0) {
-        printf("|%d| = %d", a,-a);
-    } else if (a = 0) {
-        printf("|%d| = %d", a,a);
-    }
+    printf("|%d| = %d", a, ((a >= 0)? a : -a));
     return 0;
 }
 ```
@@ -497,11 +491,11 @@ int main() {
         i = i + 1;
     }
     printf("%d \n", c);
-    a = 0;
+    a = 1;
     b = 1;
     c = a + b;
     printf("iii. First n Fibinacci numbers : \n");
-    if (n >= 1) {printf("%d \n", 0);}
+    if (n >= 1) {printf("%d \n", 1);}
     if (n >= 2) {printf("%d \n", 1);}
     i = 3;
     while (i < n + 1) {
@@ -525,24 +519,14 @@ Fibonacci series upto n :
 5 
 8 
 
-ii. Enter required n : 15
-nth Fibonacci number : 610 
+ii. Enter required n : 5
+nth Fibonacci number : 5 
 iii. First n Fibinacci numbers : 
-0 
+1
 1 
 2 
 3 
 5 
-8 
-13 
-21 
-34 
-55 
-89 
-144 
-233 
-377 
-610 
 ```
 
 20. Check whether a number is Perfect or not (A number is considered to e a Perfect
@@ -1327,6 +1311,69 @@ Found 2 at position 4.
 
 40. Do the previous problem using binary search.
 
+```c
+#include<stdio.h>
+int sort(int arr[], int n) {
+    int temp;
+    for(int i=0; i < n-1; i++) {
+        for (int j = 0; j < n-1-i; j++) {
+            if (arr[j] > arr[j+1]) {
+                temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+            }
+        }
+    }
+}
+int binSearch(int target,int n,int arr[]) {
+    int high = n-1;
+    int low = 0;
+    while (low <= high) {
+        int mid = (low + high)/2;
+        if (arr[mid] == target) {
+            return mid;
+        } else if (mid > target) {
+            high = mid - 1;
+        } else {
+            low = mid + 1;
+        }
+    }
+    return -1;
+}
+int main() {
+    int n, target;
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+    printf("Enter the target to search for: ");
+    scanf("%d", &target);
+    int arr[n];
+    printf("Enter the array elements: \n");
+    for (int i = 0; i < n; i++) {
+        printf(">>");
+        scanf("%d", &arr[i]);
+    }
+    sort(arr, n);
+    int result = binSearch(target, n, arr);
+    if (result != -1) {
+        printf("%d found at indes %d in sorted array.",target, result+1);
+    } else {
+        printf("Error 404 !");
+    }
+    return 0;
+}
+```
+```
+Enter the number of elements: 5
+Enter the target to search for: 3
+Enter the array elements: 
+>>2
+>>5
+>>3
+>>4
+>>1
+3 found at indes 3 in sorted array.
+```
+
 41. Find the factorial of a number using function
 
 ```c
@@ -1350,8 +1397,6 @@ int fact(n) {
 Number? : 5
 5! = 120 
 ```
-
-
 
 43. Draw the Pascal Triangle
 

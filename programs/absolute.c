@@ -3,12 +3,6 @@ int main() {
     int a;
     printf("ENter a number :");
     scanf("%d", &a);
-    if (a > 0) {
-        printf("|%d| = %d", a,a);
-    } else if (a < 0) {
-        printf("|%d| = %d", a,-a);
-    } else if (a = 0) {
-        printf("|%d| = %d", a,a);
-    }
+    printf("|%d| = %d", a, ((a >= 0)? a : -a));
     return 0;
 }
