@@ -30,23 +30,16 @@ int main() {
     scanf("%d", &a);
     printf("Enter the second side : ");
     scanf("%d", &b);
-    printf("Enter the third side : ");
-    scanf("%d", &c);
 
-    printf("Perimeter = %d \n", a+b+c);
-
-    double s = (a + b + c)/2 ;
-    double area = sqrt(s*(s-a)*(s-b)*(s-c));
-
-    printf("Area = %.4f\n", area);
+    printf("Perimeter = %d \n", 2*(a+b));
+    printf("Area = %d\n", a*b);
 }   
 ```
 ```
 Enter the first side : 3
 Enter the second side : 4
-Enter the third side : 5
-Perimeter = 12 
-Area = 6.0000
+Perimeter = 14 
+Area = 12
 ```
 
 3.  Input three decimal numbers and find their sum and average.
