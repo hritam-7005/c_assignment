@@ -375,6 +375,7 @@ int main() {
 
 ```c
 #include <stdio.h>
+int fact(int n);
 int main() {
     int n;
     printf("Number? : ");
@@ -382,7 +383,7 @@ int main() {
     printf("%d! = %d \n", n ,fact(n));
     return 0;
 }
-int fact(n) {
+int fact(int n) {
     int m = 1;
     for (int i = 2; i < n+1; i++) {
         m = m * i;
@@ -606,6 +607,7 @@ two primes.
 
 ```c
 #include<stdio.h>
+int isprime(int n);
 int main() {
     int n;
     printf("Enter the number to check: ");
@@ -624,7 +626,7 @@ int main() {
     }
 }
 
-int isprime(n) {
+int isprime(int n) {
     int check = 0;
     for(int i = 2; i < n; i++){
         if (n % i == 0) {
@@ -720,6 +722,7 @@ Krishnamurti number if the sum of factorials of its digits is equal to the numbe
 
 ```c
 #include<stdio.h>
+int fact(int n);
 int main() {
     int n;
     printf("Enter a number: ");
@@ -737,7 +740,7 @@ int main() {
     }
     return 0;
 }
-int fact(n) {
+int fact(int n) {
     int m = 1;
     for (int i = 2; i < n+1; i++) {
         m = m * i;
@@ -754,13 +757,7 @@ Enter a number: 145
 
 ```c
 #include <stdio.h>
-int main() {
-    printpattern1(); printf("\n");
-    printpattern2(); printf("\n");
-    printpattern3(); printf("\n");
-    printpattern4(); printf("\n");
-    
-}
+
 int printpattern1() {
     for (int i = 0; i < 6; i++) {
         for (int j = 0; j < i + 1; j++) {
@@ -805,6 +802,13 @@ void printpattern4() {
         }
         printf("\n");
     }
+}
+int main() {
+    printpattern1(); printf("\n");
+    printpattern2(); printf("\n");
+    printpattern3(); printf("\n");
+    printpattern4(); printf("\n");
+    
 }
 ```
 ```
@@ -974,6 +978,10 @@ numbers)
 ```c
 #include<stdio.h>
 
+int pseries(int i,int n);
+int isprime(int n);
+int fseries(int i,int a,int b);
+
 int pcount, fcount = 1;
 int fnum1, fnum2, pnum1;
 int main() {
@@ -990,7 +998,7 @@ int main() {
         i = i + 1;
     }
 }
-int pseries(i, n) {
+int pseries(int i, int n) {
     int j = n+1;
     if (i == 0) {
         pcount = pcount + 1;
@@ -1004,7 +1012,7 @@ int pseries(i, n) {
         return pnum1;
     }
 }
-int isprime(n) {
+int isprime(int n) {
     int check = 0;
     for(int i = 2; i < n; i++){
         if (n % i == 0) {
@@ -1016,7 +1024,7 @@ int isprime(n) {
         return 1;
     } else if (check == 0) {return 0;}
 }
-int fseries(i,a,b) {
+int fseries(int i,int a,int b) {
     if (i == 1) {fcount=fcount + 1; return 1;}
     else if (i == 2) {fcount = fcount + 1; return 2;}
     else {
@@ -1039,6 +1047,9 @@ Enter n: 10
 #include<stdio.h>
 int pcount = 1;
 int pnum = 2;
+int pseries(int i, int n);
+int isprime(int n);
+
 int main() {
     int n;
     int psum = 2;
@@ -1051,7 +1062,7 @@ int main() {
     printf("Sum of first %d primes is: %d", n,psum);
     return 0;
 }
-int pseries(i, n) {
+int pseries(int i, int n) {
     int j = n+1;
     if (i == 0) {
         pcount = pcount + 1;
@@ -1064,7 +1075,7 @@ int pseries(i, n) {
         pcount = pcount + 1;
     }
 }
-int isprime(n) {
+int isprime(int n) {
     int check = 0;
     for(int i = 2; i < n; i++){
         if (n % i == 0) {
@@ -1086,6 +1097,7 @@ Sum of first 5 primes is: 28
 
 ```c
 #include<stdio.h>
+int fact(int n)
 int main() {
     int n;
     printf("Enter a number: ");
@@ -1103,7 +1115,7 @@ int main() {
     }
     return 0;
 }
-int fact(n) {
+int fact(int n) {
     int m = 1;
     for (int i = 2; i < n+1; i++) {
         m = m * i;
@@ -1156,6 +1168,8 @@ Non Fibonacci series upto n :
 
 ```c
 #include <stdio.h>
+int choose(int n,int r);
+int fact(int n);
 int main() {
     int n,r;
     printf("n : ");
@@ -1165,11 +1179,11 @@ int main() {
     printf("%dC%d = %d \n", n , r ,choose(n,r));
     return 0;
 }
-int choose(n,r) {
+int choose(int n,int r) {
     int c = fact(n)/(fact(n-r)*fact(r));
     return c;
 }
-int fact(n) {
+int fact(int n) {
     int m = 1;
     for (int i = 2; i < n+1; i++) {
         m = m * i;
@@ -1378,6 +1392,7 @@ Enter the array elements:
 
 ```c
 #include <stdio.h>
+int fact(int n);
 int main() {
     int n;
     printf("Number? : ");
@@ -1385,7 +1400,7 @@ int main() {
     printf("%d! = %d \n", n ,fact(n));
     return 0;
 }
-int fact(n) {
+int fact(int n) {
     int m = 1;
     for (int i = 2; i < n+1; i++) {
         m = m * i;
@@ -1402,6 +1417,8 @@ Number? : 5
 
 ```c
 #include<stdio.h>
+int choose(int n,int r);
+int fact(int n);
 int main() {
     int n;
     printf("How many lines : ");
@@ -1420,11 +1437,11 @@ int main() {
     return 0;
 }
 
-int choose(n,r) {
+int choose(int n,int r) {
     int c = fact(n)/(fact(n-r)*fact(r));
     return c;
 }
-int fact(n) {
+int fact(int n) {
     int m = 1;
     for (int i = 2; i < n+1; i++) {
         m = m * i;
